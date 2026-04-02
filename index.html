@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp City — Blueprint</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="overlay">
+  <div class="logo">WHATSAPP<br><span>CITY</span></div>
+  <div class="tagline">◈ Architectural Chat Visualization ◈</div>
+  <div class="upload-grid" id="uploadGrid"></div>
+  <button class="go-btn" id="goBtn">◈ RENDER CITY ◈</button>
+</div>
+
+<div id="loadScreen">
+  <div class="blueprint-grid-anim"></div>
+  <div class="load-inner">
+    <div class="load-title">CONSTRUCTING</div>
+    <div class="load-progress-wrap"><div class="load-progress" id="loadBar"></div></div>
+    <div class="load-sub" id="loadSub">Initializing…</div>
+  </div>
+</div>
+
+<div id="hud">
+  <div class="panel district-panel">
+    <div class="panel-label">DISTRICT</div>
+    <div class="dp-name" id="dpName">—</div>
+    <div class="dp-stat" id="dpStat">—</div>
+    <div class="dp-desc" id="dpDesc"></div>
+  </div>
+
+  <div class="compass-wrap">
+    <svg class="compass-svg" viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="28" stroke="#4a9eff" stroke-width="1" fill="none" opacity="0.4"/>
+      <text x="30" y="10"  text-anchor="middle" fill="#4a9eff" font-size="7" font-family="monospace">N</text>
+      <text x="30" y="56"  text-anchor="middle" fill="#4a9eff" font-size="7" font-family="monospace">S</text>
+      <text x="6"  y="33"  text-anchor="middle" fill="#4a9eff" font-size="7" font-family="monospace">W</text>
+      <text x="54" y="33"  text-anchor="middle" fill="#4a9eff" font-size="7" font-family="monospace">E</text>
+    </svg>
+    <div id="compassNeedle"></div>
+  </div>
+
+  <div class="minimap-wrap">
+    <div class="panel-label" style="padding:6px 8px 2px">MAP</div>
+    <canvas id="minimapCanvas" width="150" height="150"></canvas>
+  </div>
+
+  <div class="teleport-bar" id="tpBar"></div>
+
+  <div class="controls-hint">
+    WASD — MOVE &nbsp;|&nbsp; DRAG — ROTATE<br>
+    SCROLL — ZOOM &nbsp;|&nbsp; SPACE — UP &nbsp;|&nbsp; SHIFT — DOWN<br>
+    CLICK — INSPECT &nbsp;|&nbsp; E — INFO
+  </div>
+</div>
+
+<div class="stats-popup" id="statsPopup">
+  <button class="sp-close" onclick="closePopup()">✕</button>
+  <div class="sp-tag" id="spTag">DISTRICT</div>
+  <div class="sp-icon" id="spIcon">💬</div>
+  <div class="sp-name" id="spName">Name</div>
+  <div class="sp-big" id="spBig">0</div>
+  <div class="sp-unit" id="spUnit">unit</div>
+  <div class="sp-divider"></div>
+  <div class="sp-rows" id="spRows"></div>
+  <div class="sp-towns" id="spTowns"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
